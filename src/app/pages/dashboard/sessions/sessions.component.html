@@ -1,0 +1,65 @@
+<div class="sessions-section">
+  <h2>Gestion des Sessions</h2>
+  
+  <!-- Formulaire compact pour ajouter une session -->
+  <form (ngSubmit)="saveSession()" class="session-form">
+    <h3>{{ editingSession ? 'Modifier une session' : 'Ajouter une session' }}</h3>
+
+    <div class="form-group compact">
+      <label for="student">Étudiant</label>
+      <select id="student" [(ngModel)]="currentSession.studentId" name="student" required>
+        <option *ngFor="let student of students" [value]="student.id">{{ student.name }}</option>
+      </select>
+    </div>
+
+    <div class="form-group compact">
+      <label for="date">Date</label>
+      <input type="date" id="date" [(ngModel)]="currentSession.date" name="date" required>
+    </div>
+
+    <div class="form-group compact">
+      <label for="time">Heure</label>
+      <input type="time" id="time" [(ngModel)]="currentSession.time" name="time" required>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit">{{ editingSession ? 'Mettre à jour' : 'Ajouter' }}</button>
+      <button type="button" class="cancel-btn" (click)="closeSessionForm()">Annuler</button>
+    </div>
+  </form>
+
+  <!-- Filtre par date -->
+  <div class="filter-section">
+    <label for="filterDate">Filtrer par date</label>
+    <input
+  type="date"
+  #filterDate
+  (change)="sessions = filterSessionsByDate(filterDate.value)"
+  id="filterDate"
+/>
+
+  </div>
+
+  <!-- Tableau des sessions -->
+  <table class="sessions-table">
+    <thead>
+      <tr>
+        <th>Étudiant</th>
+        <th>Date</th>
+        <th>Heure</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let session of sessions">
+        <td>{{ getStudentName(session.studentId) }}</td> <!-- Fonction pour obtenir le nom de l'étudiant -->
+        <td>{{ session.date }}</td>
+        <td>{{ session.time }}</td>
+        <td>
+          <button (click)="openSessionForm(session)">Modifier</button>
+          <button (click)="deleteSession(session.id)" class="delete-btn">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

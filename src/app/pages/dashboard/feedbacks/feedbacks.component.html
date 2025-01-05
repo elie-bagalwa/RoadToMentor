@@ -1,0 +1,23 @@
+<div class="feedbacks-section">
+    <h2>Feedbacks des Étudiants</h2>
+  
+    <!-- Filtre par étudiant -->
+    <div class="filter-section">
+      <label for="studentFilter">Filtrer par étudiant :</label>
+      <select id="studentFilter" [(ngModel)]="selectedStudent" (change)="filterFeedbacks()">
+        <option value="">Tous les étudiants</option>
+        <option *ngFor="let student of students" [value]="student.name">
+          {{ student.name }}
+        </option>
+      </select>
+    </div>
+  
+    <!-- Liste des feedbacks -->
+    <div class="feedback-list">
+      <div class="feedback-card" *ngFor="let feedback of filteredFeedbacks">
+        <h3>{{ feedback.student }}</h3>
+        <p>{{ feedback.message }}</p>
+      </div>
+    </div>
+  </div>
+  

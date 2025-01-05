@@ -1,0 +1,64 @@
+.feedbacks-section {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .feedbacks-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .filter-section {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .filter-section label {
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  
+  .filter-section select {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .feedback-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .feedback-card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feedback-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #08ad31;
+  }
+  
+  .feedback-card p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .feedback-list {
+      grid-template-columns: 1fr;
+    }
+  
+    .filter-section {
+      text-align: left;
+    }
+  }
+  

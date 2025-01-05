@@ -1,0 +1,68 @@
+/* --- Styles par défaut (desktop) --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-content {
+  padding: 0 20px;
+  margin: 20px 0;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+/* --- Responsive pour mobile (max-width: 768px) --- */
+@media (max-width: 768px) {
+  .dashboard-container app-sidebar {
+    position: fixed; /* Fixer la barre en bas de l'écran */
+    bottom: 0; /* Alignement bas */
+    left: 0; /* Évite un décalage horizontal */
+    width: 100%; /* Barre occupe toute la largeur */
+    display: flex;
+    justify-content: space-around; /* Espacement des icônes */
+    align-items: center;
+    padding: 10px 0;
+    background-color: rgb(238, 237, 237); /* Garder un fond pour la barre */
+    z-index: 1000; /* Assurez-vous qu'elle soit au-dessus du contenu */
+  }
+
+  .dashboard-container app-sidebar ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%; /* S'assurer que les éléments restent alignés */
+    padding: 0;
+  }
+
+  .dashboard-container app-sidebar li {
+    margin: 0; /* Supprime les marges inutiles */
+    list-style: none; /* Supprime les puces */
+  }
+
+  .dashboard-container app-sidebar a {
+    display: flex;
+    flex-direction: column; /* Icône au-dessus du texte */
+    align-items: center;
+    color: #000; /* Couleur par défaut des liens */
+    text-decoration: none;
+    font-size: 12px; /* Taille réduite pour les textes */
+    transition: color 0.3s ease;
+  }
+
+  .dashboard-container app-sidebar a.active {
+    color: #08ad31; /* Couleur pour les liens actifs */
+  }
+
+  .dashboard-container app-sidebar .icon {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px; /* Espace entre icône et texte */
+  }
+
+  .main-content {
+    padding: 25px;
+    margin-bottom: 150px;
+    
+  }
+}

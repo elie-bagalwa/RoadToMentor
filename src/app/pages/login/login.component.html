@@ -1,0 +1,32 @@
+<div class="login-container">
+  <h1 class="login-title">Welcome to Mentor Login</h1>
+  <form class="login-form" (ngSubmit)="onLogin()">
+    <div class="form-group">
+      <label for="email">
+        <img src="/assets/icons/user.svg" alt="User Icon" />
+      </label>
+      <input
+        id="email"
+        type="text"
+        placeholder="Email / Username"
+        [(ngModel)]="email"
+        name="email"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="password">
+        <img src="/assets/icons/lock.svg" alt="Lock Icon" />
+      </label>
+      <input
+        id="password"
+        type="password"
+        placeholder="Password"
+        [(ngModel)]="password"
+        name="password"
+        required
+      />
+    </div>
+    <button type="submit" class="login-button">Log in</button>
+  </form>
+</div>

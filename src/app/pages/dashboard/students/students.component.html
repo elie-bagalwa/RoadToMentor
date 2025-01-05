@@ -1,0 +1,50 @@
+<div class="students-section">
+  <h2>Liste des Étudiants</h2>
+
+  <!-- Formulaire pour ajouter/modifier un étudiant -->
+  <form (ngSubmit)="isEditing ? updateStudent() : addStudent()" class="student-form">
+    <input 
+      type="text" 
+      placeholder="Nom" 
+      [(ngModel)]="studentForm.name" 
+      name="name" 
+      required />
+    <input 
+      type="email" 
+      placeholder="Email" 
+      [(ngModel)]="studentForm.email" 
+      name="email" 
+      required />
+    <input 
+      type="number" 
+      placeholder="Sessions réalisées" 
+      [(ngModel)]="studentForm.sessionsCount" 
+      name="sessionsCount" 
+      min="0" />
+    <button type="submit">{{ isEditing ? 'Mettre à jour' : 'Ajouter' }}</button>
+    <button type="button" *ngIf="isEditing" (click)="resetForm()">Annuler</button>
+  </form>
+
+  <!-- Tableau des étudiants -->
+  <table class="students-table">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Sessions réalisées</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{ student.name }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.sessionsCount }}</td>
+        <td>
+          <button (click)="editStudent(student)">Modifier</button>
+          <button (click)="deleteStudent(student.id)" class="delete-btn">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

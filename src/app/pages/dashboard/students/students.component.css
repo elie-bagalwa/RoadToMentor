@@ -1,0 +1,134 @@
+/* --- Section principale des étudiants --- */
+.students-section {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.students-section h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #333;
+  text-align: center;
+}
+
+/* --- Formulaire pour ajouter/modifier un étudiant --- */
+.student-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.student-form input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex: 1 1 100%; /* Par défaut, prend toute la largeur sur mobile */
+  max-width: 300px; /* Limite la taille pour les grands écrans */
+}
+
+.student-form button {
+  padding: 8px 15px;
+  font-size: 14px;
+  background-color: #08ad31;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1 1 auto;
+}
+
+.student-form button:hover {
+  background-color: #069f2b;
+}
+
+.student-form button[type="button"] {
+  background-color: #ccc;
+}
+
+.student-form button[type="button"]:hover {
+  background-color: #999;
+}
+
+/* --- Tableau des étudiants --- */
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.students-table th, .students-table td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.students-table th {
+  background-color: #f4f4f4;
+  font-size: 16px;
+}
+
+.students-table td {
+  font-size: 14px;
+}
+
+.students-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Boutons d'actions */
+.students-table button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.students-table button:hover {
+  opacity: 0.9;
+}
+
+.students-table .delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.students-table .delete-btn:hover {
+  background-color: #e04343;
+}
+
+/* --- Responsive pour mobile --- */
+@media (max-width: 768px) {
+  .students-section {
+    padding: 10px;
+  }
+
+  .student-form {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .student-form input, .student-form button {
+    width: 100%;
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .students-table th, .students-table td {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .students-table {
+    font-size: 12px;
+  }
+
+  .students-table button {
+    font-size: 12px;
+    padding: 5px;
+  }
+}

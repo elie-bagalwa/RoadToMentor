@@ -1,0 +1,27 @@
+<div class="dashboard-home">
+  <h2>Bienvenue sur votre tableau de bord</h2>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <h3>Étudiants</h3>
+      <p>{{ studentCount }} inscrits</p>
+      <button (click)="navigateTo('students')">Voir les étudiants</button>
+    </div>
+    <div class="stat-card">
+      <h3>Sessions</h3>
+      <p>{{ sessionCount }} réalisées</p>
+      <button (click)="navigateTo('sessions')">Voir les sessions</button>
+    </div>
+    <div class="stat-card">
+      <h3>Feedbacks</h3>
+      <p>{{ feedbackCount }} reçus</p>
+      <button (click)="navigateTo('feedbacks')">Voir les feedbacks</button>
+    </div>
+  </div>
+
+  <div class="actions">
+    <div class="actions">
+      <button (click)="navigateTo('sessions')">📅 Créer une session</button>
+    </div>
+  </div>
+</div>
