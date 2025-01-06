@@ -1,38 +1,42 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core'; // Gestion des composants Angular
+import { Router } from '@angular/router'; // Service de navigation entre les routes
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  selector: 'app-home', 
+  standalone: true, 
+  imports: [], 
+  templateUrl: './home.component.html', 
+  styleUrls: ['./home.component.css'], 
 })
 export class HomeComponent implements OnInit {
-  studentCount: number = 0; // Nombre d'étudiants
-  sessionCount: number = 0; // Nombre de sessions 
-  feedbackCount: number = 2; // Nombre de feedbacks 
+  // Variables pour les statistiques
+  studentCount: number = 0; // Nombre total d'étudiants
+  sessionCount: number = 0; // Nombre total de sessions
+  feedbackCount: number = 2; // Nombre total de feedbacks
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {} // Injection du service de navigation
 
   ngOnInit(): void {
-    // Récupérer les étudiants depuis le localStorage
-    const storedStudents = localStorage.getItem('students');
-    const students = storedStudents ? JSON.parse(storedStudents) : [];
-    this.studentCount = students.length; // Met à jour le nombre d'étudiants
+    // Récupérer et analyser les données depuis le localStorage
 
-    // Récupérer les sessions depuis le localStorage
-    const storedSessions = localStorage.getItem('sessions');
-    const sessions = storedSessions ? JSON.parse(storedSessions) : [];
-    this.sessionCount = sessions.length; // Met à jour le nombre de sessions
+    // Étudiants
+    const storedStudents = localStorage.getItem('students'); // Récupère les étudiants enregistrés
+    const students = storedStudents ? JSON.parse(storedStudents) : []; // Convertit les données JSON ou crée un tableau vide
+    this.studentCount = students.length; // Compte le nombre d'étudiants
 
-    // Récupérer les feedbacks depuis le localStorage
-    const storedFeedbacks = localStorage.getItem('feedbacks');
-    const feedbacks = storedFeedbacks ? JSON.parse(storedFeedbacks) : [];
-    this.feedbackCount = feedbacks.length; // Met à jour le nombre de Feedbacks
+    // Sessions
+    const storedSessions = localStorage.getItem('sessions'); // Récupère les sessions enregistrées
+    const sessions = storedSessions ? JSON.parse(storedSessions) : []; // Convertit les données JSON ou crée un tableau vide
+    this.sessionCount = sessions.length; // Compte le nombre de sessions
+
+    // Feedbacks
+    const storedFeedbacks = localStorage.getItem('feedbacks'); // Récupère les feedbacks enregistrés
+    const feedbacks = storedFeedbacks ? JSON.parse(storedFeedbacks) : []; // Convertit les données JSON ou crée un tableau vide
+    this.feedbackCount = feedbacks.length; // Compte le nombre de feedbacks
   }
 
   navigateTo(path: string): void {
-    this.router.navigate([`/dashboard/${path}`]);
+    // Méthode de navigation vers une section spécifique
+    this.router.navigate([`/dashboard/${path}`]); // Construit l'URL cible et redirige
   }
 }

@@ -1,7 +1,13 @@
+<!-- Le composant de l'en-tête du site -->
 <app-header></app-header>
+
 <div class="dashboard-container">
+  <!-- Composant de la barre latérale du site -->
   <app-sidebar></app-sidebar>
+
+  <!-- Zone principale du contenu, où s'affichent les vues des différents composants  -->
   <div class="main-content">
-    <router-outlet></router-outlet>
+    <!-- Affiche le contenu des routes enfants du dashboard -->
+    <router-outlet></router-outlet> 
   </div>
 </div>

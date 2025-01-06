@@ -1,42 +1,49 @@
 <aside class="sidebar">
   <ul>
+    <!-- Lien vers la page d'accueil -->
     <li>
       <a
         routerLink="/dashboard/home"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
+        routerLinkActive="active" 
+        [routerLinkActiveOptions]="{ exact: true }" 
       >
-        <img src="assets/icons/home.svg" alt="Accueil" class="icon" />
-        Accueil
+        <img src="assets/icons/home.svg" alt="Accueil" class="icon" /> 
+        Accueil 
       </a>
     </li>
+
+    <!-- Lien vers la page des étudiants -->
     <li>
       <a
         routerLink="/dashboard/students"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
       >
-        <img src="assets/icons/students.svg" alt="Étudiants" class="icon" />
+        <img src="assets/icons/students.svg" alt="Étudiants" class="icon" /> <!-- Icône des étudiants -->
         Étudiants
       </a>
     </li>
+
+    <!-- Lien vers la page des sessions -->
     <li>
       <a
         routerLink="/dashboard/sessions"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
       >
-        <img src="assets/icons/session.svg" alt="Sessions" class="icon" />
+        <img src="assets/icons/session.svg" alt="Sessions" class="icon" /> <!-- Icône des sessions -->
         Sessions
       </a>
     </li>
+
+    <!-- Lien vers la page des feedbacks -->
     <li>
       <a
         routerLink="/dashboard/feedbacks"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
       >
-        <img src="assets/icons/feedback.svg" alt="Feedbacks" class="icon" />
+        <img src="assets/icons/feedback.svg" alt="Feedbacks" class="icon" /> <!-- Icône des feedbacks -->
         Feedbacks
       </a>
     </li>

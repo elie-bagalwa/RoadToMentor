@@ -1,32 +1,38 @@
 <div class="login-container">
-  <h1 class="login-title">Welcome to Mentor Login</h1>
-  <form class="login-form" (ngSubmit)="onLogin()">
+  <!-- Conteneur principal pour la page de connexion -->
+  <h1 class="login-title">Welcome to Mentor Login</h1> 
+  <!-- Formulaire de connexion qui appelle la méthode onLogin() lors de la soumission -->
+  <form class="login-form" (ngSubmit)="onLogin()"> 
     <div class="form-group">
-      <label for="email">
-        <img src="/assets/icons/user.svg" alt="User Icon" />
+      <label for="email"> 
+        <img src="/assets/icons/user.svg" alt="User Icon" /> <!-- Icône utilisateur -->
       </label>
+
+      <!-- le ngModel est pour  synchroniser la valeur de l'input avec la variable email -->
       <input
         id="email"
         type="text"
         placeholder="Email / Username"
-        [(ngModel)]="email"
-        name="email"
-        required
+        [(ngModel)]="email" 
+        name="email" 
+        required 
       />
     </div>
     <div class="form-group">
-      <label for="password">
-        <img src="/assets/icons/lock.svg" alt="Lock Icon" />
+      <label for="password"> 
+        <img src="/assets/icons/lock.svg" alt="Lock Icon" /> 
       </label>
+
+      <!-- Liaison bidirectionnelle pour synchroniser la valeur de l'input avec la variable password -->
       <input
         id="password"
         type="password"
         placeholder="Password"
-        [(ngModel)]="password"
-        name="password"
-        required
+        [(ngModel)]="password" 
+        name="password" 
+        required 
       />
     </div>
-    <button type="submit" class="login-button">Log in</button>
+    <button type="submit" class="login-button">Login</button> <!-- Bouton pour soumettre le formulaire -->
   </form>
 </div>

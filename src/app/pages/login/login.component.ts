@@ -4,10 +4,10 @@ import { Router } from '@angular/router'; // Service pour la navigation entre le
 
 @Component({
   selector: 'app-login', // Nom de l'étiquette HTML pour ce composant
-  templateUrl: './login.component.html', // Fichier HTML lié
-  styleUrls: ['./login.component.css'], // Fichier CSS lié
-  standalone: true, // Déclare ce composant comme autonome
-  imports: [FormsModule], // Modules nécessaires pour le fonctionnement du composant
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'], 
+  standalone: true, 
+  imports: [FormsModule], // importation du Modules nécessaire pour le fonctionnement du composant
 })
 export class LoginComponent {
   // Propriétés liées aux champs de formulaire
@@ -17,7 +17,6 @@ export class LoginComponent {
   // Une liste simulant une base de données locale avec des utilisateurs
   users = [
     { email: 'elie@gmail.com', password: 'password', name: 'Elie' },
-    { email: 'admin@gmail.com', password: 'admin123', name: 'Admin' },
   ];
 
   // Constructeur pour injecter le service Router

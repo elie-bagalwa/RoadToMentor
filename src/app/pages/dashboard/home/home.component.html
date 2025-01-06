@@ -1,27 +1,33 @@
 <div class="dashboard-home">
+  <!-- Message de bienvenue -->
   <h2>Bienvenue sur votre tableau de bord</h2>
 
+  <!-- Section de statistiques -->
   <div class="stats-grid">
+    <!-- Carte des étudiants -->
     <div class="stat-card">
       <h3>Étudiants</h3>
-      <p>{{ studentCount }} inscrits</p>
-      <button (click)="navigateTo('students')">Voir les étudiants</button>
+      <p>{{ studentCount }} inscrits</p> <!-- Affichage du nombre d'étudiants -->
+      <button (click)="navigateTo('students')">Voir les étudiants</button> <!-- Navigation vers la section Étudiants -->
     </div>
+
+    <!-- Carte des sessions -->
     <div class="stat-card">
       <h3>Sessions</h3>
-      <p>{{ sessionCount }} réalisées</p>
-      <button (click)="navigateTo('sessions')">Voir les sessions</button>
+      <p>{{ sessionCount }} réalisées</p> <!-- Affichage du nombre de sessions -->
+      <button (click)="navigateTo('sessions')">Voir les sessions</button> <!-- Navigation vers la section Sessions -->
     </div>
+
+    <!-- Carte des feedbacks -->
     <div class="stat-card">
       <h3>Feedbacks</h3>
-      <p>{{ feedbackCount }} reçus</p>
-      <button (click)="navigateTo('feedbacks')">Voir les feedbacks</button>
+      <p>{{ feedbackCount }} reçus</p> <!-- Affichage du nombre de feedbacks -->
+      <button (click)="navigateTo('feedbacks')">Voir les feedbacks</button> <!-- Navigation vers la section Feedbacks -->
     </div>
   </div>
 
+  <!-- Actions -->
   <div class="actions">
-    <div class="actions">
-      <button (click)="navigateTo('sessions')">📅 Créer une session</button>
-    </div>
+    <button (click)="navigateTo('sessions')">📅 Créer une session</button> <!-- Navigation vers la création de sessions -->
   </div>
 </div>
